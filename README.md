@@ -33,96 +33,6 @@
 
 ---
 
-## Lokale Entwicklung
-
-```bash
-# Abhängigkeiten installieren
-npm install
-
-# Dev-Server starten (http://localhost:3000/docmotion/)
-npm run dev
-
-# Production-Build
-npm run build
-
-# Build lokal vorschauen
-npm run preview
-```
-
----
-
-## Deployment (GitHub Pages)
-
-### Vorbereitung
-
-1. In `package.json` den `homepage`-Wert anpassen:
-   ```json
-   "homepage": "https://DEIN_GITHUB_USERNAME.github.io/docmotion"
-   ```
-
-2. GitHub-Repo `docmotion` erstellen und Remote setzen:
-   ```bash
-   git init
-   git remote add origin https://github.com/DEIN_USERNAME/docmotion.git
-   ```
-
-3. PWA-Icons hinzufügen (optional aber empfohlen):
-   - `public/icon-192.png` (192×192px)
-   - `public/icon-512.png` (512×512px)
-
-### Deployen
-
-```bash
-npm run deploy
-```
-
-Das Script baut die App und pusht den `dist`-Ordner auf den `gh-pages`-Branch.
-
----
-
-## Projektstruktur
-
-```
-docmotion/
-├── index.html
-├── vite.config.js
-├── tailwind.config.js
-├── package.json
-├── public/
-│   ├── manifest.json      # PWA-Manifest
-│   ├── sw.js              # Service Worker
-│   └── favicon.svg
-├── src/
-│   ├── main.jsx           # Einstiegspunkt + SW-Registrierung
-│   ├── App.jsx            # Haupt-Layout + View-Routing
-│   ├── index.css          # Globale Stile + Animationen
-│   ├── data/
-│   │   └── exercises.js   # 27 Übungen + Hilfsfunktionen
-│   ├── store/
-│   │   └── useStore.js    # Zustand (State + Actions + localStorage)
-│   ├── hooks/
-│   │   ├── useTimer.js    # Countdown-Timer
-│   │   └── useStats.js    # Computed Stats
-│   ├── components/
-│   │   ├── Dashboard.jsx
-│   │   ├── ProgressRing.jsx
-│   │   ├── ChallengeCard.jsx
-│   │   ├── Timer.jsx
-│   │   ├── CompletionOverlay.jsx
-│   │   ├── CategoryFilter.jsx
-│   │   ├── TodayHistory.jsx
-│   │   ├── StatsView.jsx
-│   │   ├── SettingsView.jsx
-│   │   ├── StreakBadge.jsx
-│   │   └── Navigation.jsx
-│   └── utils/
-│       ├── storage.js     # Export/Import-Helfer
-│       └── dateHelpers.js # Datum-Utilities
-└── .claude/
-    └── launch.json        # Preview-Konfiguration
-```
-
----
 
 ## Datenmodell
 
@@ -152,15 +62,6 @@ Alle Daten werden in `localStorage` unter dem Key `docmotion-storage` gespeicher
   }
 }
 ```
-
----
-
-## Design
-
-- **Hintergrund:** `#0f1117` (sattes Schwarz)
-- **Akzent:** `#4ade80` → `#a3e635` (Grün-Lime-Gradient)
-- **Schriften:** DM Serif Display (Headlines) + Outfit (Fließtext)
-- **Mobile-First:** Max-Width 480px, Touch-optimiert
 
 ---
 
